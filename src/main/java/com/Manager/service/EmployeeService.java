@@ -11,16 +11,6 @@ public class EmployeeService {
 	@Autowired
 	EmployeeRepository employeerepository;
 
-	public Employee updateUserById(Employee empObject, Long employeeId) {
-		Employee existingUser = employeerepository.findById(employeeId).get();
-		existingUser.setEmpName(empObject.getEmpName());
-		existingUser.setEmpEmail(empObject.getEmpEmail());
-		existingUser.setEmpPassword(empObject.getEmpPassword());
-		existingUser.setEmpPhone(empObject.getEmpPhone());
-
-		employeerepository.save(existingUser);
-		return employeerepository.findById(employeeId).get();
-	}
 	
 	
 }
